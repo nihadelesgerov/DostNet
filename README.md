@@ -3,7 +3,7 @@ Design belongs to ChatGPT tbh
 Reason I used Chatgpt is because tried to make and push this idea as soon as possible
 Btw I prefer to use ChatGPT for feedbacks to solve problems by myself
 I was pushing my projects to GitHub while using configuration files .I did same for this project too, but prefered to use secret.json because my google OAuth configuration codes
-So Let's get quick trailer.In DostNet I wanted to user ajax but didn't learned yet tbh.
+So Let's get quick trailer.In DostNet I wanted to use ajax but didn't learned yet tbh.
 In Homepage I displayed Posts,Articles and Interview Questions
 If you click one of items , you will see GUID in url , cuz wanted to users reach posts via homepage only.If you have any other ideas,offer or remarks,please feel free to contact with me
 Email adress : nihadelesgerov0@gmail.com
