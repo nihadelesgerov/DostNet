@@ -1,0 +1,211 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Giriş</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Container for the page content */
+        .content {
+            margin-top: 80px; /* Add margin to avoid navbar overlap */
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 600;
+            color: #512bd4;
+            margin-bottom: 20px;
+        }
+
+        .google-btn {
+            background-color: #db4437;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+            .google-btn:hover {
+                background-color: #c1351d;
+            }
+
+        .terms {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .terms input[type="checkbox"] {
+                margin-right: 10px;
+            }
+
+            .terms label {
+                font-size: 14px;
+                color: #555;
+            }
+
+            .terms a {
+                color: #512bd4;
+                text-decoration: none;
+            }
+
+        .submit-btn {
+            background-color: #512bd4;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+            opacity: 0.5;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+            .submit-btn.active {
+                opacity: 1;
+                pointer-events: auto;
+            }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" asp-controller="Main" class="logo">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News" asp-controller="Info">Xəbərlər</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="container">
+            <div class="logo">DostNet</div>
+            <!-- Checkbox for accepting terms -->
+            <div class="terms">
+                <label for="terms-checkbox"> Giriş etməklə 
+                    DostNet <a asp-action="Terms" asp-controller="Info">Siyasət və Şərtlərini</a> qəbul etmiş olursunuz.
+                </label>
+            </div>
+
+            <!-- Submit Button (Initially Disabled) -->
+            <form method="post" asp-action="ExternalLogin" asp-controller="oAuth">
+                @Html.AntiForgeryToken()
+                <button id="login-btn" class="submit-btn" name="provider" value="Google">Google ilə Giriş</button>
+            </form>
+            <div asp-validation-summary="All" class="text-danger"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs" asp-controller="Info">About Us</a>
+            <a asp-action="Contact" asp-controller="Info">Contact Us</a>
+            <a asp-action="PrivacyPolicy" asp-controller="Info">Privacy Policy</a>
+            <a asp-action="Terms" asp-controller="Info">Terms</a>
+            <a asp-action="Report" asp-controller="Info">Report a Bug</a>
+            <a href="#">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+
+    <script>
+        const loginBtn = document.getElementById('login-btn');
+        loginBtn.classList.add('active')
+    </script>
+</body>
+</html>

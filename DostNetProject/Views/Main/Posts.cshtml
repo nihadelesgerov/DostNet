@@ -1,0 +1,187 @@
+﻿@model Post
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Postlara Bax</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+
+    <!-- Prism.js Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet" />
+
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-csharp.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a asp-action="HomePage" class="logo">DostNet</a>
+                <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+                <a asp-action="News" asp-controller="Info">Xəbərlər</a>
+            </div>
+        </nav>
+
+        <!-- Body: Public Post View -->
+        <div class="content">
+            <div class="column">
+                <h2>Post Detalları</h2>
+
+                <form class="post-form">
+                    <label for="author">Post Sahibi <b style="color:purple">@Model.User.Email</b></label>
+                    <label for="title">Post Başlığı <b style="color:purple">@Model.PostTitle</b></label>
+                    <label for="content">Post Məzmunu</label>
+                    <textarea id="content" name="content" rows="5" readonly>@Model.Content</textarea>
+
+                    <label for="code">Paylaşılan Kod</label>
+                    <pre>
+                    <code class="language-csharp" id="code" name="code" readonly>
+                            @Model.Code
+                        </code>
+                    </pre>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-more">
+                <a asp-action="AboutUs" asp-controller="Info">About Us</a>
+                <a asp-action="Contact" asp-controller="Info">Contact Us</a>
+                <a asp-action="PrivacyPolicy" asp-controller="Info">Privacy Policy</a>
+                <a asp-action="Terms" asp-controller="Info">Terms</a>
+                <a asp-action="Report" asp-controller="Info">Report a Bug</a>
+                <a href="#">Partners</a>
+            </div>
+            <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+        </footer>
+    </div>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Səhifənin tam hündürlüyü */
+        }
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Content */
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            padding: 20px 5%;
+        }
+
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        /* Post Form Styling */
+        .post-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(81, 43, 212, 0.3); /* 512bd4 shadow */
+            border: 1px solid #ddd;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        pre code {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            min-height: 200px;
+            background-color: #f8f4fc;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+
+</body>
+</html>

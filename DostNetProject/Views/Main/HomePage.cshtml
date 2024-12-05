@@ -1,0 +1,239 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" class="logo">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News" asp-controller="Info">Xəbərlər</a>
+        </div>
+    @if(User.Identity.IsAuthenticated){
+            <div class="navbar-right">
+                <form method="post" asp-action="LogOut" asp-controller="oAuth">
+                    <button class="logout-button">Çıxış</button>
+                </form>
+                <a asp-action="Account" class="logout-button">Hesabım</a>
+            </div>
+    }
+    else{
+            <div class="navbar-right">
+                <form method="get" asp-action="SignIn" asp-controller="oAuth">
+                    <button class="login-button">Daxil Ol</button>
+                </form>
+            </div>
+    }
+    </nav>
+
+    <!-- Body -->
+    <div class="content">
+        <div class="column">
+            <h2 style="color:#512bd4">Postlar</h2>
+            @foreach (var posts in ViewBag.Posts)
+           {
+                   <a style="text-decoration:none" method="get" asp-action="Posts" asp-route-id="@posts.Id">
+                    <div class="cards">
+                        <div class="card">
+                            <h3>@posts.PostTitle</h3>
+                            <p>
+                                <b>@posts.User.Email</b> tərəfindən <br />
+                                Posts da paylaşıldı
+                             </p>
+                        </div>
+                    </div>
+                   </a>
+                <br />
+                <br />
+           }
+        </div>
+
+        <div class="column">
+            <h2 style="color:#512bd4">Məqalələr</h2>
+            @foreach (var articles in ViewBag.Aritcles)
+           {
+                <a style="text-decoration:none" method="get" asp-action="Articles" asp-route-id="@articles.Id">
+                    <div class="cards">
+                        <div class="card">
+                            <h2>@articles.Topic</h2>
+                            <p>
+                                <b>@articles.User.Email</b> tərəfindən <br />
+                                Məqalələrdə paylaşıldı
+                            </p>
+                        </div>
+                    </div>
+                  </a>
+                <br />
+                <br />
+           }
+        </div>
+
+        <div class="column">
+            <h2 style="color:#512bd4">Interview Sualları</h2>
+            @foreach (var qstns in ViewBag.InterviewQuestions)
+           {
+                <a style="text-decoration:none" method="get" asp-action="InterviewQuestions" asp-route-id="@qstns.Id">
+                    <div class="cards">
+                        <div class="card">
+                            <h3>@qstns.Title</h3>
+                            <p>Sahə:@qstns.Field</p>
+                            <p>Paylaşdı: @qstns.User.Email</p>
+                        </div>
+                    </div>
+                </a>
+                <br />
+                <br />
+           }
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs" asp-controller="Info">About Us</a>
+            <a asp-action="Contact" asp-controller="Info">Contact Us</a>
+            <a asp-action="PrivacyPolicy" asp-controller="Info">Privacy Policy</a>
+            <a asp-action="Terms" asp-controller="Info">Terms</a>
+            <a asp-action="Report" asp-controller="Info">Report a Bug</a>
+            <a href="#">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body stretches to fill the viewport */
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #8661c1; /* Hover effekti */
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.3s;
+        }
+
+            .navbar-right .logout-button, .navbar-right .post-button {
+                padding: 10px 20px;
+                background-color: #512bd4;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+                .navbar-right .logout-button:hover, .navbar-right .post-button:hover {
+                    background-color: #8661c1;
+                    transition: color 0.3s;
+                }
+
+        .navbar .login-button, .navbar .signup-button {
+            background-color: #8661c1;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+            .navbar .login-button:hover, .navbar .signup-button:hover {
+                background-color: #a287d6;
+            }
+
+        /* Content */
+        .content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 5%;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #f8f4fc;
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 16px;
+            margin-top: auto; /* Push the footer to the bottom */
+            transition: color 0.3s;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</body>
+</html>

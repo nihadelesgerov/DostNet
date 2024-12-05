@@ -1,0 +1,179 @@
+﻿@model InterViewQuestion
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Interview Sualları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Prism.js Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet" />
+
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-csharp.min.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" asp-controller="Main">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News">Xəbərlər</a>
+        </div>
+    </nav>
+
+    <!-- Body: Public Interview Question View -->
+    <div class="content">
+        <div class="column">
+            <h2>Interview Sualı Detalları</h2>
+
+            <form class="form-container">
+                <label for="author">Sual <b>@Model.User.Email</b> tərəfindən paylaşılıb</label> <br /><br />
+
+                <label for="subject">Başlıq : @Model.Title</label> <br /><br />
+
+                <label for="question">Sualın Mətni @Model.Question</label>  
+                <textarea id="question" name="question" rows="5" readonly>Sualın tam mətni burada göstəriləcək...</textarea>
+                <br /><br />
+                <label for="type">@Model.Field</label>
+                <br /><br />
+
+                <!-- Kod bölməsi yalnız texniki növ üçün -->
+                <div id="code-section" style="display: block;">
+                    <label for="code">Cavab</label>
+                    <pre><code class="language-csharp" readonly>
+                        @Model.AnswerLikeTopic
+                    </code></pre>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs">About Us</a>
+            <a asp-action="Contact">Contact Us</a>
+            <a asp-action="PrivacyPolicy">Privacy Policy</a>
+            <a asp-action="Terms">Terms</a>
+            <a asp-action="Report">Report a Bug</a>
+            <a asp-action="Partners">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Content */
+        .content {
+            display: flex;
+            justify-content: center;
+            padding: 20px 5%;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .form-container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(81, 43, 212, 0.5); /* Box Shadow əlavə etdim */
+            background-color: #f9f9ff;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        pre code {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            min-height: 200px;
+            background-color: #f8f4fc;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+            transition: color 0.3s;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</body>
+</html>

@@ -1,0 +1,228 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" class="logo" asp-controller="Main">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News">Xəbərlər</a>
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="navbar-right">
+                <a href="#" class="logout-button">Çıxış</a>
+                <a asp-action="Account" class="logout-button">Hesabım</a>
+            </div>
+        }
+        else
+        {
+            <div class="navbar-right">
+                <form method="get" asp-action="SignIn" asp-controller="oAuth">
+                    <button class="login-button">Daxil Ol</button>
+                </form>
+            </div>
+        }
+    </nav>
+
+    <!-- About Us Body -->
+    <div class="content">
+        <h1>Haqqımızda</h1>
+
+        <div class="container">
+            <h2>Məqsədimiz</h2>
+            <p>
+                DostNet, .NET proqramçılarının bir araya gəlməsi və birlikdə öyrənib inkişaf etməsi üçün yaradılmış bir cəmiyyətdir.
+                Platformamız, bilik paylaşımını asanlaşdırmaq, kod problemlərini həll etmək və cəmiyyət üzvlərinin bir-biri ilə əlaqədə olmasını təmin etmək məqsədi güdür.
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>İcma Dəstəyi</h2>
+            <p>
+                DostNet üzvləri bir-birinə kömək edir, təcrübələrini paylaşır və iş imkanları haqqında məlumat verir.
+                Hər kəsə açıqlıq və dostluq prinsipinə əsaslanırıq. İnanırıq ki, güclü bir cəmiyyət, fərdi inkişaf üçün ən vacib amillərdən biridir.
+            </p>
+        </div>
+
+        <div class="container">
+            <h2>Təsisçinin Mesajı</h2>
+            <p>
+                Bu sayt, proqramçılar arasında güclü bir əlaqə qurmaq və onların qarşılaşdığı çətinlikləri həll etmək üçün hazırlanmışdır.
+                LinkedIn hesabım vasitəsilə mənə birbaşa müraciət edə bilərsiniz:
+            </p>
+            <a href="https://www.linkedin.com/in/nihad-alasgarov-1a7934200/" target="_blank" class="linkedin-button">Mənimlə Əlaqə</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs">About Us</a>
+            <a asp-action="Contact">Contact Us</a>
+            <a asp-action="PrivacyPolicy">Privacy Policy</a>
+            <a asp-action="Terms">Terms</a>
+            <a asp-action="Report">Report a Bug</a>
+            <a asp-action="Partners">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.3s;
+        }
+
+            .navbar-right .logout-button, .navbar-right .post-button {
+                padding: 10px 20px;
+                background-color: #512bd4;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+                .navbar-right .logout-button:hover, .navbar-right .post-button:hover {
+                    background-color: #8661c1;
+                    transition: color 0.3s;
+                }
+
+        .navbar .login-button, .navbar .signup-button {
+            background-color: #8661c1;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+            .navbar .login-button:hover, .navbar .signup-button:hover {
+                background-color: #a287d6;
+            }
+        /* Content */
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #512bd4;
+        }
+
+        .container {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(81, 43, 212, 0.3);
+            background-color: #f9f9ff;
+        }
+
+        h2 {
+            color: #512bd4;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* LinkedIn Button */
+        .linkedin-button {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #0077b5;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+            .linkedin-button:hover {
+                background-color: #005582;
+            }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+            transition: color 0.3s;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</body>
+</html>

@@ -1,0 +1,230 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Report a Bug</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Container for the page content */
+        .content {
+            margin-top: 80px; /* Add margin to avoid navbar overlap */
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: 600;
+            color: #512bd4;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #512bd4;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.3s;
+        }
+
+            .navbar-right .logout-button, .navbar-right .post-button {
+                padding: 10px 20px;
+                background-color: #512bd4;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+                .navbar-right .logout-button:hover, .navbar-right .post-button:hover {
+                    background-color: #8661c1;
+                    transition: color 0.3s;
+                }
+
+        .navbar .login-button, .navbar .signup-button {
+            background-color: #8661c1;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+            .navbar .login-button:hover, .navbar .signup-button:hover {
+                background-color: #a287d6;
+            }
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" asp-controller="Main">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News">Xəbərlər</a>
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="navbar-right">
+                <a href="#" class="logout-button">Çıxış</a>
+                <a asp-action="Account" class="logout-button">Hesabım</a>
+            </div>
+        }
+        else
+        {
+            <div class="navbar-right">
+                <form method="get" asp-action="SignIn" asp-controller="oAuth">
+                    <button class="login-button">Daxil Ol</button>
+                </form>
+            </div>
+        }
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="container">
+            <div class="logo">DostNet - Report a Bug</div>
+
+            <form action="#" method="POST">
+                <label for="email">Email Adresi</label>
+                <input class="input-field" type="email" id="email" name="email" placeholder="Emailinizi daxil edin" required>
+
+                <label for="bugDescription">Bug Haqqında Məlumat</label>
+                <textarea id="bugDescription" name="bugDescription" placeholder="Bug barədə ətraflı məlumat verin" required></textarea>
+
+                <button type="submit" class="submit-btn">Göndər</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs">About Us</a>
+            <a asp-action="Contact">Contact Us</a>
+            <a asp-action="PrivacyPolicy">Privacy Policy</a>
+            <a asp-action="Terms">Terms</a>
+            <a asp-action="Report">Report a Bug</a>
+            <a asp-action="Partners">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+</body>
+</html>

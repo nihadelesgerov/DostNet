@@ -1,0 +1,121 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DostNetProject
+build_property.RootNamespace = DostNetProject
+build_property.ProjectDir = C:\Users\Nihad\source\repos\DostNetProject\DostNetProject\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Nihad\source\repos\DostNetProject\DostNetProject
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Info/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Info/Contact.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xDb250YWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Info/Jobs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xKb2JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Info/News.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xOZXdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Info/PrivacyPolicy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xQcml2YWN5UG9saWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Info/Report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xSZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Info/Terms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5mb1xUZXJtcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxBY2NvdW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/Articles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxBcnRpY2xlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/HomePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxIb21lUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/InterviewQuestions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxJbnRlcnZpZXdRdWVzdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/Notfound.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxOb3Rmb3VuZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/Posts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxQb3N0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/ShareArticle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxTaGFyZUFydGljbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/ShareIVQ.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxTaGFyZUlWUS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Main/Sharepost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxTaGFyZXBvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/oAuth/AccesDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncb0F1dGhcQWNjZXNEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/oAuth/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3Ncb0F1dGhcU2lnbkluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nihad/source/repos/DostNetProject/DostNetProject/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-eu07i3x10t

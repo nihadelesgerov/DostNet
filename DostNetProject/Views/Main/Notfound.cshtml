@@ -1,0 +1,148 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Xətası</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Content */
+        .content {
+            margin-top: 80px; /* Navbarın üstünü bağlamaması üçün */
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 20px;
+        }
+
+            .content h1 {
+                font-size: 72px;
+                color: #512bd4;
+                margin-bottom: 10px;
+            }
+
+            .content p {
+                font-size: 18px;
+                color: #666;
+                margin-bottom: 30px;
+            }
+
+            .content a {
+                text-decoration: none;
+                padding: 12px 24px;
+                font-size: 16px;
+                background-color: #512bd4;
+                color: white;
+                border-radius: 5px;
+                transition: background-color 0.3s;
+            }
+
+                .content a:hover {
+                    background-color: #8661c1;
+                }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .footer-links a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" class="logo">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News" asp-controller="Info">Xəbərlər</a>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+        <h1>404</h1>
+        <p>Bu Web Səhifəsi Tapılmadı. Axtardığınız səhifə mövcud deyil və ya silinib.</p>
+        <a asp-action="HomePage">Ana Səhifəyə Qayıt</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a asp-action="AboutUs" asp-controller="Info">About Us</a>
+            <a asp-action="Contact" asp-controller="Info">Contact Us</a>
+            <a asp-action="PrivacyPolicy" asp-controller="Info">Privacy Policy</a>
+            <a asp-action="Terms" asp-controller="Info">Terms</a>
+            <a asp-action="Report" asp-controller="Info">Report a Bug</a>
+            <a href="#">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+</body>
+</html>

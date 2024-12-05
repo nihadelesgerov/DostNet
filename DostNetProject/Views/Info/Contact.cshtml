@@ -1,0 +1,195 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Bizimlə Əlaqə</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Content */
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+            .content h1 {
+                color: #512bd4;
+                margin-bottom: 20px;
+            }
+
+            .content p {
+                font-size: 18px;
+                color: #333;
+                text-align: center;
+                max-width: 800px;
+                margin-bottom: 20px;
+            }
+
+        .email-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #512bd4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+            .email-link:hover {
+                background-color: #8661c1;
+            }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.3s;
+        }
+
+            .navbar-right .logout-button, .navbar-right .post-button {
+                padding: 10px 20px;
+                background-color: #512bd4;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                transition: color 0.3s;
+            }
+
+                .navbar-right .logout-button:hover, .navbar-right .post-button:hover {
+                    background-color: #8661c1;
+                    transition: color 0.3s;
+                }
+
+        .navbar .login-button, .navbar .signup-button {
+            background-color: #8661c1;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+            .navbar .login-button:hover, .navbar .signup-button:hover {
+                background-color: #a287d6;
+            }
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" asp-controller="Main">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News">Xəbərlər</a>
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="navbar-right">
+                <a href="#" class="logout-button">Çıxış</a>
+                <a asp-action="Account" class="logout-button">Hesabım</a>
+            </div>
+        }
+        else
+        {
+            <div class="navbar-right">
+                <form method="get" asp-action="SignIn" asp-controller="oAuth">
+                    <button class="login-button">Daxil Ol</button>
+                </form>
+            </div>
+        }
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Bizimlə Əlaqə</h1>
+        <p>DostNet icması haqqında daha çox məlumat əldə etmək və ya hər hansı bir sualınız varsa, bizimlə əlaqə saxlamaq üçün aşağıdakı e-poçt ünvanına yazın:</p>
+        <a class="email-link" href="mailto:nihadelesgeroventerprise0@gmail.com">Bizə Yazın</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs">About Us</a>
+            <a asp-action="Contact">Contact Us</a>
+            <a asp-action="PrivacyPolicy">Privacy Policy</a>
+            <a asp-action="Terms">Terms</a>
+            <a asp-action="Report">Report a Bug</a>
+            <a asp-action="Partners">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+</body>
+</html>

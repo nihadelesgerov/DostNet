@@ -1,0 +1,222 @@
+﻿@model ArticleDTO
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Məqalə Paylaş</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Content */
+        .content {
+            display: flex;
+            justify-content: center;
+            padding: 20px 5%;
+        }
+
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(81, 43, 212, 0.2);
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #512bd4;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .share-button, .cancel-button {
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            flex: 1;
+        }
+
+        .share-button {
+            background-color: #512bd4;
+            color: white;
+            border: none;
+        }
+
+            .share-button:hover {
+                background-color: #8661c1;
+            }
+
+        .cancel-button {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+            .cancel-button:hover {
+                background-color: #ff4d4d;
+            }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+            transition: color 0.3s;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" asp-controller="Main">DostNet</a>
+            <a asp-action="Jobs">İşlər</a>
+            <a asp-action="News">Xəbərlər</a>
+        </div>
+    </nav>
+
+    <!-- Body -->
+    <div class="content">
+        <div class="form-container">
+            <h2>Məqalə Paylaş</h2>
+            <form asp-action="ShareArticle" method="post">
+                <label asp-for="Title" ></label>
+                <input asp-for="Title" type="text" placeholder="Məqalənin başlığını daxil edin" >
+                <span style="color:red" asp-validation-for="Title"></span>
+
+                <label asp-for="ShortDescription">Qısa Təsvir</label>
+                <textarea asp-for="ShortDescription"  placeholder="Qısa təsvir daxil edin" ></textarea>
+                <span style="color:red" asp-validation-for="ShortDescription"></span>
+
+
+                <label asp-for="Content"></label>
+                <textarea asp-for="Content"  placeholder="Məqalənin tam məzmununu daxil edin" ></textarea>
+                <span style="color:red" asp-validation-for="Content"></span>
+
+                <label asp-for="Topic"></label>
+                <input asp-for="Topic" type="text" placeholder=" məs Razor,Blazer,Xamarin .....">
+                <span style="color:red" asp-validation-for="Topic"></span>
+
+
+                <div class="buttons">
+                    <form method="post" asp-action="ShareArticle" asp-controller="Main">
+                    <button type="submit" class="share-button">Paylaş</button>
+                    </form>
+                    <a asp-action="Account" asp-controller="Main" asp type="reset" class="cancel-button">Ləğv Et</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+        </div>
+        <div class="footer-more">
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Report a Bug</a>
+            <a href="#">FAQ</a>
+            <a href="#">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+</body>
+</html>
+<a href="~/jquery/jquery.min.map">~/jquery/jquery.min.map</a>
+<a href="~/jquery/jquery.slim.min.map">~/jquery/jquery.slim.min.map</a>
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery/jquery.slim.min.js"></script>
+<script src="~/jquery/jquery.slim.js"></script>
+<script src="~/jquery/jquery.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>

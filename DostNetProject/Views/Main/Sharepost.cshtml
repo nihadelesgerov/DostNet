@@ -1,0 +1,215 @@
+﻿    @model DostNetProject.Models.PostDTO
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Post Paylaş</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" asp-controller="Main">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News" asp-controller="Info">Xəbərlər</a>
+        </div>
+    </nav>
+
+    <!-- Body -->
+    <div class="content">
+        <div class="column">
+            <h2>Post Paylaş</h2>
+            <form asp-action="Sharepost" method="post">
+                <label asp-for="PostTitle"></label>
+                <input asp-for="PostTitle" type="text"  placeholder="Başlıq daxil edin" >
+                <span style="color:red" asp-validation-for="PostTitle"></span>
+
+                <label asp-for="Content"></label>
+                <textarea asp-for="Content" placeholder="Məzmunu daxil edin" ></textarea>
+                <span style="color:red" asp-validation-for="Content"></span>
+
+                <label asp-for="Code"></label>
+                <input asp-for="Code" type="text" id="codeHidden" />
+                <span style="color:red" asp-validation-for="Code"></span>
+
+                <div class="buttons">
+                        <form asp-action="Sharepost" method="post" asp-controller="Main">
+                        <button type="submit" class="share-button">Paylaş</button>
+                        </form>
+                    <a style="background-color:red" asp-action="Account" type="reset" class="cancel-button">Ləğv Et</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs">About Us</a>
+            <a asp-action="Contact">Contact Us</a>
+            <a asp-action="PrivacyPolicy">Privacy Policy</a>
+            <a asp-action="Terms">Terms</a>
+            <a asp-action="Report">Report a Bug</a>
+            <a asp-action="Partners">Partners</a>
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1; /* Hover effekti */
+                }
+
+        /* Content */
+        .content {
+            display: flex;
+            justify-content: center;
+            padding: 20px 5%;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        pre code {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            min-height: 200px;
+            background-color: #f8f4fc;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .share-button, .cancel-button {
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 48%; /* Hər iki düymənin uzunluğunu artırdım */
+        }
+
+        .share-button {
+            background-color: #512bd4;
+            color: white;
+            border: none;
+        }
+
+            .share-button:hover {
+                background-color: #8661c1;
+            }
+
+        .cancel-button {
+            background-color: red;
+            color: white;
+            border: none;
+        }
+
+            .cancel-button:hover {
+                background-color: #ff4d4d; /* Ləğv et düyməsi üçün hover effekti */
+            }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto;
+            transition: color 0.3s;
+        }
+
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+
+</body>
+</html>
+<a href="~/jquery/jquery.min.map">~/jquery/jquery.min.map</a>
+<a href="~/jquery/jquery.slim.min.map">~/jquery/jquery.slim.min.map</a>
+<script src="~/jquery/jquery.min.js"></script>
+<script src="~/jquery/jquery.slim.min.js"></script>
+<script src="~/jquery/jquery.slim.js"></script>
+<script src="~/jquery/jquery.js"></script>
+<script src="~/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/jquery-validate/jquery.validate.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>

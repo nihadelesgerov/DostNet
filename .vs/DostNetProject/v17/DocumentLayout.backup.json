@@ -1,0 +1,147 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|c:\\users\\nihad\\source\\repos\\dostnetproject\\dostnetproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|solutionrelative:dostnetproject\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|c:\\users\\nihad\\source\\repos\\dostnetproject\\dostnetproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|solutionrelative:dostnetproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Nihad\\AppData\\Roaming\\Microsoft\\UserSecrets\\16e0f3ea-5b30-4a02-9c1f-8333302e78c9\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|c:\\users\\nihad\\source\\repos\\dostnetproject\\dostnetproject\\views\\main\\sharearticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|solutionrelative:dostnetproject\\views\\main\\sharearticle.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|c:\\users\\nihad\\source\\repos\\dostnetproject\\dostnetproject\\views\\main\\sharepost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|solutionrelative:dostnetproject\\views\\main\\sharepost.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|c:\\users\\nihad\\source\\repos\\dostnetproject\\dostnetproject\\views\\main\\shareivq.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|solutionrelative:dostnetproject\\views\\main\\shareivq.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|c:\\users\\nihad\\source\\repos\\dostnetproject\\dostnetproject\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{032E34E1-3730-413F-9CDC-F304D2BCA919}|DostNetProject\\DostNetProject.csproj|solutionrelative:dostnetproject\\controllers\\maincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 222,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainController.cs",
+              "DocumentMoniker": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Controllers\\MainController.cs",
+              "RelativeDocumentMoniker": "DostNetProject\\Controllers\\MainController.cs",
+              "ToolTip": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Controllers\\MainController.cs",
+              "RelativeToolTip": "DostNetProject\\Controllers\\MainController.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAAJEAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T10:53:35.755Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\Nihad\\AppData\\Roaming\\Microsoft\\UserSecrets\\16e0f3ea-5b30-4a02-9c1f-8333302e78c9\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\16e0f3ea-5b30-4a02-9c1f-8333302e78c9\\secrets.json",
+              "ToolTip": "C:\\Users\\Nihad\\AppData\\Roaming\\Microsoft\\UserSecrets\\16e0f3ea-5b30-4a02-9c1f-8333302e78c9\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\16e0f3ea-5b30-4a02-9c1f-8333302e78c9\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-04T07:07:21.217Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\appsettings.json",
+              "RelativeDocumentMoniker": "DostNetProject\\appsettings.json",
+              "ToolTip": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\appsettings.json",
+              "RelativeToolTip": "DostNetProject\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-05T11:45:28.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Program.cs",
+              "RelativeDocumentMoniker": "DostNetProject\\Program.cs",
+              "ToolTip": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Program.cs",
+              "RelativeToolTip": "DostNetProject\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-05T11:45:27.106Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShareArticle.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Views\\Main\\ShareArticle.cshtml",
+              "RelativeDocumentMoniker": "DostNetProject\\Views\\Main\\ShareArticle.cshtml",
+              "ToolTip": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Views\\Main\\ShareArticle.cshtml",
+              "RelativeToolTip": "DostNetProject\\Views\\Main\\ShareArticle.cshtml",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAAANEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T12:51:07.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Sharepost.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Views\\Main\\Sharepost.cshtml",
+              "RelativeDocumentMoniker": "DostNetProject\\Views\\Main\\Sharepost.cshtml",
+              "ToolTip": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Views\\Main\\Sharepost.cshtml",
+              "RelativeToolTip": "DostNetProject\\Views\\Main\\Sharepost.cshtml",
+              "ViewState": "AgIAALkAAAAAAAAAAAAAAMsAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T12:51:05.272Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ShareIVQ.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Views\\Main\\ShareIVQ.cshtml",
+              "RelativeDocumentMoniker": "DostNetProject\\Views\\Main\\ShareIVQ.cshtml",
+              "ToolTip": "C:\\Users\\Nihad\\source\\repos\\DostNetProject\\DostNetProject\\Views\\Main\\ShareIVQ.cshtml",
+              "RelativeToolTip": "DostNetProject\\Views\\Main\\ShareIVQ.cshtml",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAAAMoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T12:51:02.759Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

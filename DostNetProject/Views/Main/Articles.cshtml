@@ -1,0 +1,173 @@
+﻿@model Article
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DostNet - Məqalə Detalları</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+    <!-- Prism.js Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" rel="stylesheet" />
+
+    <!-- Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/components/prism-csharp.min.js"></script>
+</head>
+    <body>
+        <div class="wrapper">
+            <!-- Əsas konteyner -->
+            <!-- Navbar -->
+            <nav class="navbar">
+                <div class="navbar-left">
+                    <a asp-action="HomePage" asp-controller="Main">DostNet</a>
+                    <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+                    <a asp-action="News">Xəbərlər</a>
+                </div>
+            </nav>
+
+            <!-- Body: Public Article View -->
+            <div class="content">
+                <div class="column">
+                    <h2>Məqalə Detalları</h2>
+
+                    <form class="form-container">
+                        <label for="author"><b style="color:purple">@Model.User.Email</b></label> <br /> <br />
+                        <label for="title"><b style="color:purple">@Model.Title</b></label><br /> <br />
+                        <label for="category"><b style="color:purple">@Model.Topic</b></label><br /><br />
+                        <label for="content"><b style="color:purple">@Model.ShortDescription</b></label> <br /> <br />
+                        <textarea id="content" name="content" rows="8" readonly>
+                            @Model.Content
+                    </textarea>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="footer-more">
+                    <a asp-action="AboutUs">About Us</a>
+                    <a asp-action="Contact">Contact Us</a>
+                    <a asp-action="PrivacyPolicy">Privacy Policy</a>
+                    <a asp-action="Terms">Terms</a>
+                    <a asp-action="Report">Report a Bug</a>
+                    <a asp-action="Partners">Partners</a>
+                </div>
+                <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+            </footer>
+        </div>
+    <style>
+        /* General Styles */
+        /* General Styles */
+        html, body {
+            height: 100%; /* Səhifənin tam hündürlüyünü təmin edir */
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        /* Wrapper */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%; /* Səhifənin tam hündürlüyü */
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+        }
+
+            .navbar a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar a:hover {
+                    color: #8661c1;
+                }
+
+        /* Content */
+        .content {
+            flex: 1; /* Məzmunu genişləndirir */
+            display: flex;
+            justify-content: center;
+            padding: 20px 5%;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .form-container {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(81, 43, 212, 0.5); /* Box Shadow əlavə etdim */
+            background-color: #f9f9ff;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        /* Input və textarea üslubu */
+        input[type="text"], textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%; /* Genişliyi tam olaraq genişləndirir */
+            box-sizing: border-box; /* Padding daxilində hesablanır */
+        }
+
+        textarea {
+            resize: none; /* İstifadəçi tərəfindən genişləndirilməyə icazə verilmir */
+            min-height: 200px; /* Minimum hündürlük */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto; /* Footer-in alt hissədə qalmasını təmin edir */
+            transition: color 0.3s;
+        }
+
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+
+
+    </style>
+</body>
+</html>

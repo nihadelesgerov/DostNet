@@ -1,0 +1,359 @@
+﻿@model UserPostsViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İstifadəçi Hesabı</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="~/Images/DostNetLogo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- İkonlar üçün -->
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a asp-action="HomePage" class="logo">DostNet</a>
+            <a asp-action="Jobs" asp-controller="Info">İşlər</a>
+            <a asp-action="News" asp-controller="Info">Xəbərlər</a>
+        </div>
+        <div class="navbar-right">
+            <form method="post" asp-action="LogOut" asp-controller="oAuth">
+                <button href="#" class="logout-button">Çıxış</button>
+            </form>
+            <div class="post-dropdown">
+                <button class="post-button">Paylaş</button>
+                <div class="dropdown-content">
+                    <a asp-action="Sharepost">Post</a>
+                    <a asp-action="Sharearticle">Artikl</a>
+                    <a asp-action="ShareIVQ">Interview Sualı</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body -->
+    <div class="content">
+        <div class="profile">
+            <h1>İstifadəçi Profil</h1>
+            <form>
+                <div class="profile-info">
+                    <label style="color:purple" for="email">Email : @ViewBag.Email</label>
+                </div>
+            </form>
+        </div>
+
+        <!-- User Content -->
+        <div class="user-content">
+            <div class="column">
+                <h2>Postlarım</h2>
+                <div class="cards">   
+                    @foreach(var post in Model.Posts)
+                    {
+                        <div class="card">
+                            <h3>@post.PostTitle</h3>
+                            <div class="card-buttons">
+                                <button class="edit-button">Düzəlt</button>
+                                <button class="delete-button">Sil</button>
+                            </div>
+                        </div>
+                        <br />
+
+                    }
+                </div>
+            </div>
+
+            <div class="column">
+                <h2> Məqalələrim</h2>
+                <div class="cards">
+
+                  @foreach(var articles in Model.Articles)
+                  {
+                        <div class="card">
+                            <h3>@articles.Title</h3>
+                            <div class="card-buttons">
+                                <button class="edit-button">Düzəlt</button>
+                                <button class="delete-button">Sil</button>
+                            </div>
+                        </div>
+                        <br />
+
+                  }
+                </div>
+            </div>
+
+            <div class="column">
+                <h2>Interview Suallarım</h2>
+                <div class="cards">
+                 @foreach(var questions in Model.InterViewQuestions)
+                 {
+                        <div class="card">
+                            <h3>@questions.Title</h3>
+                            <div class="card-buttons">
+                                <button class="edit-button">Düzəlt</button>
+                                <button class="delete-button">Sil</button>
+                            </div>
+                        </div>
+                        <br />
+                 }
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-more">
+            <a asp-action="AboutUs" asp-controller="Info">About Us</a>
+            <a asp-action="Contact" asp-controller="Info">Contact Us</a>
+            <a asp-action="PrivacyPolicy" asp-controller="Info">Privacy Policy</a>
+            <a asp-action="Terms" asp-controller="Info">Terms</a>
+            <a asp-action="Report" asp-controller="Info">Report a Bug</a>
+            <a href="#">Partners</a>    
+        </div>
+        <p>© 2024 DostNet. Bütün hüquqlar qorunur.</p>
+    </footer>
+    <style>
+        /* General Styles */
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+            display: flex; /* Use flexbox to structure the page */
+            flex-direction: column; /* Stack elements vertically */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Linklər və sağ tərəf arasındakı məsafəni bərabər paylamaq */
+            align-items: center;
+            background-color: #512bd4;
+            padding: 15px 20px;
+            color: white;
+            transition: color 0.3s;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .content {
+            flex-grow: 1; /* Take up remaining space */
+        }
+            .navbar-left a {
+                color: white;
+                text-decoration: none;
+                margin: 0 10px;
+                font-weight: 400;
+                transition: color 0.3s;
+            }
+
+                .navbar-left a:hover {
+                    color: #d4b5f6;
+                }
+
+        .navbar .logo {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: color 0.3s;
+        }
+
+            .navbar-right .logout-button,
+            .navbar-right .post-button {
+                padding: 10px 20px;
+                background-color: #512bd4;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                display: inline-block; /* Yan-yana olmaları üçün */
+                margin-right: 80px;
+                transition: color 0.3s;
+            }
+
+                .navbar-right .logout-button:hover {
+                    background-color: #F33E3E;
+                    margin-right: 80px;
+                    transition: color 0.3s;
+                }
+
+                .navbar-right .post-button:hover {
+                    background-color: #8661c1;
+                    margin-right: 80px;
+                    transition: color 0.3s;
+                }
+
+        /* Post Dropdown */
+        .post-dropdown {
+            position: relative;
+        }
+
+            .post-dropdown .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: white;
+                min-width: 160px;
+                z-index: 1;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+        .card-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+            .card-buttons button {
+                padding: 8px 16px;
+                background-color: #512bd4;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                font-weight: 600;
+                font-size: 14px;
+            }
+
+            .card-buttons .delete-button {
+                background-color: #e74c3c;
+            }
+
+                .card-buttons .delete-button:hover {
+                    background-color: #c0392b;
+                }
+
+            .card-buttons .edit-button {
+                background-color: #512bd4;
+            }
+
+                .card-buttons .edit-button:hover {
+                    background-color: #512bd4;
+                }
+
+        .post-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .post-dropdown .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+            .post-dropdown .dropdown-content a:hover {
+                background-color: #f1f1f1;
+            }
+
+        /* Profile Section */
+        .profile {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+
+        .profile-info {
+            margin-bottom: 20px;
+        }
+
+            .profile-info label {
+                font-weight: 600;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+            .profile-info input {
+                width: 100%;
+                padding: 10px;
+                border-radius: 8px;
+                border: 1px solid #ccc;
+                font-size: 14px;
+            }
+
+        /* LinkedIn Button */
+        .linkedin-button {
+            padding: 10px 20px;
+            background-color: #0077b5;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+            .linkedin-button:hover {
+                background-color: #004a7d;
+            }
+
+        /* Content */
+        .user-content {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 5%;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card {
+            background-color: #f8f4fc;
+            border-radius: 16px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #512bd4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+            margin-top: auto; /* Push footer to the bottom of the page */
+            transition: color 0.3s;
+        }
+        .footer-links a,
+        .footer-more a {
+            color: #8661c1;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+
+            .footer-links a:hover,
+            .footer-more a:hover {
+                color: white;
+                text-decoration: underline;
+            }
+    </style>
+</body>
+</html>
