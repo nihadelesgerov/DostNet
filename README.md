@@ -21,4 +21,4 @@ Identity Framework
 OAuth
 
 Actually forgot to use ASPNETRATELIMITING Package to avoid DoS attack
-If you want to implement to your project look for : 
+If you want to implement to your project look for :  https://github.com/nihadelesgerov/AvoidAttacks/tree/main/DOS
