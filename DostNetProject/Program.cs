@@ -78,7 +78,7 @@ app.UseStatusCodePages( async options =>
 app.UseAuthorization();
 app.UseAuthentication();
 app.MapStaticAssets();
-
+app.MapFallBack(()=>Request.Text=>"Page couldn't find");
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Main}/{action=HomePage}/{id?}")
